@@ -1,0 +1,36 @@
+{
+  "name": "vuex-local-sync",
+  "version": "0.0.1",
+  "description": "vuex sync localStoreage or sessionStorage",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test",
+    "build": "babel ./src -d ./lib",
+    "tsc": "tsc -D",
+    "dev": "npm run tsc && node lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fullStackDemo/vuex-local-sync.git"
+  },
+  "keywords": [
+    "vue",
+    "vuex",
+    "localStorage",
+    "sessionStorage"
+  ],
+  "author": "alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fullStackDemo/vuex-local-sync/issues"
+  },
+  "homepage": "https://github.com/fullStackDemo/vuex-local-sync#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "typescript": "^3.3.3333",
+    "vue": "^2.6.8",
+    "vuex": "^3.1.0"
+  }
+}
