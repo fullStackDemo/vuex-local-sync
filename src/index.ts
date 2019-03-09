@@ -3,7 +3,7 @@ import { Mutation, MutationPayload, Payload, Plugin, Store } from 'vuex';
 
 import { LocalOptions } from './LocalOptions';
 
-import {merge} from './utils'
+import { merge } from './utils'
 // console.log(Store.prototype);
 
 export class VueLocalSync<S> implements LocalOptions<S> {
@@ -12,6 +12,7 @@ export class VueLocalSync<S> implements LocalOptions<S> {
   public restoreState: (key: string, storage?: Storage) => Promise<S> | S;
   public saveState: (key: string, state: {}, storage?: Storage) => Promise<void> | void;
   public key: string;
+  public filter: (mutation: Payload) => boolean
   /**
    * the plugin can be used in vuex;
    */
@@ -42,14 +43,25 @@ export class VueLocalSync<S> implements LocalOptions<S> {
       (storage).setItem(key, JSON.stringify(state));
     });
 
+    // this.filter = options.filter || (Mutation => true);
+
     this.plugin = (store: Store<S>) => {
       const savedState = this.restoreState(this.key, this.storage) as S;
 
       store.replaceState(merge(store.state, savedState || {}));
 
-    }
+      store.subscribe(() => {
+        this.saveState(this.key, store.state);
+      });
 
+    }
   }
+  /**
+   * subscribe
+   * @private
+   * @memberof VueLocalSync
+   */
+  private subscriber = (store: Store<S>) => (handler: (mutation: MutationPayload, state: S) => any) => store.subscribe(handler)
 };
 
 

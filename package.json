@@ -1,8 +1,8 @@
 {
   "name": "vuex-local-sync",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "vuex sync localStoreage or sessionStorage",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "npm run tsc && node lib/test.js",
     "build": "babel ./src -d ./lib",
@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/fullStackDemo/vuex-local-sync#readme",
   "dependencies": {
-    "@types/lodash.merge": "^4.6.6",
+    "@types/lodash": "^4.14.122",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "lodash.merge": "^4.6.1",
+    "lodash": "^4.17.11",
     "typescript": "^3.3.3333",
     "vue": "^2.6.8",
     "vuex": "^3.1.0"

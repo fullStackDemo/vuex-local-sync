@@ -1,5 +1,5 @@
-import lodashMerge from 'lodash.merge';
+// import {merge} from 'lodash';
 
 export function merge(into: any, from: any) {
-  return lodashMerge({}, into, from)
+  return Object.assign({}, into, from)
 }
