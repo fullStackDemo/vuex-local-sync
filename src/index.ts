@@ -62,7 +62,7 @@ export class VueLocalSync<S> implements LocalOptions<S> {
    * @memberof VueLocalSync
    */
   private subscriber = (store: Store<S>) => (handler: (mutation: MutationPayload, state: S) => any) => store.subscribe(handler)
-};
+}
 
 
 

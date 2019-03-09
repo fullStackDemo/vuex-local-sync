@@ -1,14 +1,18 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "module": "commonjs",
     "outDir": "./lib",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "target": "es6",
+    "module": "commonjs"
   },
-  "include": [
-    "src/*"
+  "files": [
+    "src/index.ts"
+  ],
+  "exclude": [
+    "src/LocalOptions.ts",
+    "src/utils.ts"
   ]
 }
