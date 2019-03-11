@@ -1,12 +1,13 @@
 {
   "name": "vuex-local-sync",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "vuex sync localStoreage or sessionStorage",
-  "main": "lib/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index",
   "scripts": {
     "test": "npm run tsc && node lib/test.js",
     "tsc": "tsc -D",
-    "build": "npm run tsc",
+    "build": "rollup -c build/rollup.config.js",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -31,6 +32,9 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "lodash": "^4.17.11",
+    "rollup": "^1.6.0",
+    "rollup-plugin-typescript2": "^0.19.3",
+    "rollup-plugin-uglify": "^6.0.2",
     "typescript": "^3.3.3333",
     "vue": "^2.6.8",
     "vuex": "^3.1.0"

@@ -6,7 +6,6 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "target": "es6",
-    "module": "commonjs"
   },
   "files": [
     "src/index.ts"

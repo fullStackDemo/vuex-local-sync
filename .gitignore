@@ -1,2 +1,4 @@
 node_modules
 .history
+.rpt2_cache
+lib

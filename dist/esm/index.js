@@ -1,6 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const utils_1 = require("./utils");
+function merge(into, from) {
+    return Object.assign({}, into, from);
+}
+
 class VueLocalSync {
     constructor(options) {
         this.subscriber = (store) => (handler) => store.subscribe(handler);
@@ -21,11 +22,12 @@ class VueLocalSync {
         });
         this.plugin = (store) => {
             const savedState = this.restoreState(this.key, this.storage);
-            store.replaceState(utils_1.merge(store.state, savedState || {}));
+            store.replaceState(merge(store.state, savedState || {}));
             store.subscribe(() => {
                 this.saveState(this.key, store.state, this.storage);
             });
         };
     }
 }
-exports.VueLocalSync = VueLocalSync;
+
+export { VueLocalSync };
