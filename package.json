@@ -1,9 +1,9 @@
 {
   "name": "vuex-local-sync",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "vuex sync localStoreage or sessionStorage",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index",
+  "module": "dist/esm/index.js",
   "scripts": {
     "test": "npm run tsc && node lib/test.js",
     "tsc": "tsc -D",
@@ -26,7 +26,7 @@
     "url": "https://github.com/fullStackDemo/vuex-local-sync/issues"
   },
   "homepage": "https://github.com/fullStackDemo/vuex-local-sync#readme",
-  "dependencies": {
+  "devDependencies": {
     "@types/lodash": "^4.14.122",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
