@@ -1,6 +1,6 @@
 {
   "name": "vuex-local-sync",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "vuex sync localStoreage or sessionStorage",
   "main": "lib/index.js",
   "scripts": {
