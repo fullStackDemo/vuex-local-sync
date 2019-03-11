@@ -1,13 +1,13 @@
 {
   "name": "vuex-local-sync",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "vuex sync localStoreage or sessionStorage",
   "main": "lib/index.js",
   "scripts": {
     "test": "npm run tsc && node lib/test.js",
-    "build": "babel ./src -d ./lib",
     "tsc": "tsc -D",
-    "dev": "npm run tsc && node lib/index.js"
+    "build": "npm run tsc",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",

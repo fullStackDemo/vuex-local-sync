@@ -51,7 +51,7 @@ export class VueLocalSync<S> implements LocalOptions<S> {
       store.replaceState(merge(store.state, savedState || {}));
 
       store.subscribe(() => {
-        this.saveState(this.key, store.state);
+        this.saveState(this.key, store.state, this.storage);
       });
 
     }
@@ -62,6 +62,7 @@ export class VueLocalSync<S> implements LocalOptions<S> {
    * @memberof VueLocalSync
    */
   private subscriber = (store: Store<S>) => (handler: (mutation: MutationPayload, state: S) => any) => store.subscribe(handler)
+
 }
 
 
